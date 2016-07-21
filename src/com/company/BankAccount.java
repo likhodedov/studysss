@@ -6,5 +6,16 @@ package com.company;
 public class BankAccount {
     private double balance;
 
-
+    public BankAccount(double openingBalance){
+        balance=openingBalance;
+    }
+    public void deposit(double amount){
+        balance+=amount;
+    }
+    public void withdraw (double amount){
+        balance=balance-amount;
+            }
+    public void display(){
+        System.out.println("balance at your card="+balance);
+    }
 }
