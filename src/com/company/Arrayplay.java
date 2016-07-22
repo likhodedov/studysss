@@ -1,8 +1,5 @@
 package com.company;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
-
 /**
  * Created by d.lihodedov on 21.07.2016.
  */
@@ -25,7 +22,7 @@ public class Arrayplay {
         arr[9] = 33;
        int nElems = 10;
 
-        for (j=0;j<=nElems;j++){
+        for (j=0;j<nElems;j++){
             System.out.print(arr[j]+"  ");
         }
         SearchKey=55;
@@ -36,8 +33,16 @@ public class Arrayplay {
             System.out.println("NOT FOUND "+SearchKey);
         else
             System.out.println("FOUND "+SearchKey+" at "+(j+1)+" position");
-            }
+
     float SearchDeleteKey=44;
-    
+for (j=0;j<nElems;j++)
+    if (arr[j]==SearchDeleteKey) break;
+    for (int k=j;k<nElems-1;k++) arr[k]=arr[k+1];
+        nElems--;
+
+        for (j=0;j<nElems;j++) System.out.print(arr[j]+"  ");
+
+
+    }
 
 }
