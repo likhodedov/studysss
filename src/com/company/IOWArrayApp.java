@@ -6,6 +6,7 @@ package com.company;
 public class IOWArrayApp {
     public static void main(String[] args) {
         IOWArray arr = new IOWArray(15);
+
     }
 }
 
