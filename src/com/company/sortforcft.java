@@ -24,29 +24,34 @@ public class sortforcft {
         ArrayList<String> dan = new ArrayList<String>();
        // if (!isDigit(str)) System.out.println("строка");
        // else System.out.println("число");
-     /* try(BufferedReader br = new BufferedReader(new FileReader(dirPath+"//"+args[0]))) {
+      try(BufferedReader br = new BufferedReader(new FileReader(dirPath+"//"+args[0]))) {
             while((line = br.readLine()) != null){
                 System.out.println(line);
-             if (args[1]=="-l")
-                //isDigit(line);
+             //нужна проверка элементов из файла
+                dan.add(line);
                 count++;
-                dan.get(Integer.parseInt(line));
-            }
+                            }
         } catch (FileNotFoundException e) {
             System.out.println("File not found  " + e);
         } catch (IOException e) {
 
-        }*/
+        }
 
-        File file_output = new File("output.txt");
+        Writer writer = null;
+        System.out.println(count);
         try {
-            if(!file_output.exists()){
-                file_output.createNewFile();
-            }}
-            catch(IOException e)
-            {
-                 }
+            writer = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(dirPath+"\\output.txt"), "utf-8"));
+            for (int i=0;i<dan.size();i++) {
+                writer.write(dan.get(i)+System.lineSeparator());
 
+               // Integer.toString(count)
+            }
+        } catch (IOException ex) {
+
+        } finally {
+            try {writer.close();} catch (Exception ex) {/*ignore*/}
+        }
 
     }
     private static boolean isDigit(String s) throws NumberFormatException {
