@@ -42,7 +42,7 @@ public void insertionSort(){
     {
         int temp=a[out];
         in=out;
-        while(in>0 && a[in-1]>=temp)
+        while((in>0) && (a[in-1]>=temp))
         {
             a[in]=a[in-1];
             --in;
